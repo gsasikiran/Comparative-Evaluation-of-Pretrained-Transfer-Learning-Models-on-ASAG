@@ -1,6 +1,4 @@
-# Comparative Evaluation of Transfer Learning Models on Automatic Short Answer Grading
-
- ## Objective
+## Objective
  --------------------------------------------------------------------------------
   To evaluate the robustness of pretrained embeddings of the four transfer learning models (ELMo, BERT, GPT and GPT-2) in the task of domain-specific Automatic Short Answer Grading (ASAG).
   

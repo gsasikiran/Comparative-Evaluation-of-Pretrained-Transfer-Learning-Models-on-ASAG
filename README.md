@@ -37,16 +37,16 @@
  * **Architecture:** Stacked [transformer](https://arxiv.org/pdf/1706.03762.pdf)
  * Provides structured memory for long-term dependencies
  * Semi-supervised approach with a combination of 
-  - Unsupervised pretraining
-  - Supervised finetuning
+   - Unsupervised pretraining
+   - Supervised finetuning
  
  #### [Bidirectional Encoder Representations from Transformers (BERT)](https://arxiv.org/pdf/1810.04805.pdf)
  --------------------------------------------------------------------------------
  * **Architecture:** Stacked layers of bi-directional transformer
  * Captures bi-directional context
  * Pretraining methods:
-  - Masked language model : Masks and predicts words in sentences during the training. This assists in learning context words.
-  - Next sentence prediction : Predicting the next sentence given a prior sentence. Helps for the tasks like natural language inference and question answering. 
+   - Masked language model : Masks and predicts words in sentences during the training. This assists in learning context words.
+   - Next sentence prediction : Predicting the next sentence given a prior sentence. Helps for the tasks like natural language inference and question answering. 
  
  #### [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
  --------------------------------------------------------------------------------
@@ -78,9 +78,9 @@
 ### Training and Testing
  * We split the Mohler data into 70%-30% training and testing data
  * We use the training data cosine similarities to train on three regression models namely,
-  - Isotonic regression
-  - Linear regression
-  - Ridge regression
+   - Isotonic regression
+   - Linear regression
+   - Ridge regression
  * We use these trained models, to predict the grades of test data and generate the results
  
 
@@ -127,19 +127,19 @@
  ## Observations
  --------------------------------------------------------------------------------
  * ELMo has surpassed the other transfer learning models. The reasons are two-fold:
-  - The ability of the model to assign different word vectors based on different contexts
-  - The significant amount of domain-specific data in the pretrained corpus of the model
+   - The ability of the model to assign different word vectors based on different contexts
+   - The significant amount of domain-specific data in the pretrained corpus of the model
  * Isotonic regression model works better compared to linear or ridge regression
-  - This is because isotonic regression trains cardinally as we assign grades
+   - This is because isotonic regression trains cardinally as we assign grades
  * The linear and ridge regression values are similar, as there might not be significant non-linear fit
  * Despite of no preprocessing and multiple feature extractions, ELMo competed with the former works
  
  ## Future work
  --------------------------------------------------------------------------------
  * Consider reproducing with
-  - preprocessing and multiple feature vectors
-  - domain-specific training to generate domain specific representations
-  - question demoting and word alignment as in (Sultan et al., 2016)
+   - preprocessing and multiple feature vectors
+   - domain-specific training to generate domain specific representations
+   - question demoting and word alignment as in (Sultan et al., 2016)
  * Use better sentence embeddings such as [Universal sentence encoder](https://arxiv.org/pdf/1803.11175.pdf)
  
  ## References

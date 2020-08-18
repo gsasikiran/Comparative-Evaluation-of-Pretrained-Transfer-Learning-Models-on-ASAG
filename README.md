@@ -4,6 +4,18 @@
  --------------------------------------------------------------------------------
   To evaluate the robustness of pretrained embeddings of the four transfer learning models (ELMo, BERT, GPT and GPT-2) in the task of domain-specific Automatic Short Answer Grading (ASAG).
   
+  ## Libraries
+ --------------------------------------------------------------------------------
+* torch = 1.5.0
+* nltk = 3.5
+* allennlp = 0.9.0
+* numpy = 1.18.4
+* scikit-learn = 0.22.2.post1
+* scipy = 1.4.1
+* matplotlib = 3.2.1
+* seaborn = 0.10.1
+* pandas = 1.0.3
+  
  ## Description
  --------------------------------------------------------------------------------
   
@@ -57,9 +69,21 @@
   * Lemmatization and stopword removal are neglected consciously, to assess the performance of the transfer learning models
   * Spell checker is also neglected, assuming that the graders had deducted the scores for misspelled words
  
- ## Frameworks and Libraries
- --------------------------------------------------------------------------------
+ ### Feature Extraction
+  * Generate Sum Of the Word Embeddings (SOWE) for all the answers in the dataset
+  * These embeddings are created using the embeddings of four models separately
+  * We generate the cosine similarities between the reference answer and every student answer
+  * We use this similarity score as the feature for training a regression model
+
+### Training and Testing
+ * We split the Mohler data into 70%-30% training and testing data
+ * We use the training data cosine similarities to train on three regression models namely,
+  - Isotonic regression
+  - Linear regression
+  - Ridge regression
+ * We use these trained models, to predict the grades of test data and generate the results
  
+
  ## Results
  -------------------------------------------------------------------------------- 
  

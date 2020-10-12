@@ -19,7 +19,12 @@
  ## Description
  --------------------------------------------------------------------------------
   
- 
+  ### Automatic Short Answer Grading (ASAG) dataset
+ --------------------------------------------------------------------------------
+  ASAG is the summative assessment of student answers by giving grades/score given a question and a reference answer. One of the most significant public dataset for this task is [Mohler dataset](https://www.aclweb.org/anthology/P11-1076.pdf).The dataset is provided by [Rada Mihalcea](https://web.eecs.umich.edu/~mihalcea/downloads.html) or you can download by pressing [here](http://web.eecs.umich.edu/~mihalcea/downloads/ShortAnswerGrading_v2.0.zip). It is a computer science domain dataset. It consists of 2273 answers with 80 questions collected from 31 students of University of North Texas. The scores are graded from 0(not correct) to 5(totally correct). The grades are allocated by two evaluators. We consider their average as the gold standard score. The mean and median of the assigned gold standard scores are 4.17 and 4.50 respectively. This explains the dataset biasity towards correct answer, which may affect on the regression. This biasity is clearly depicted in the following figure
+  
+![Mohler score biasity for correct answer](images/mohler_score_histogram.png)
+
  ### Transfer Learning Models
  --------------------------------------------------------------------------------
   Transfer learning is the process of training a huge corpus on a robust architecture, such that it can be used for various tasks by finetuning the final layers of the trained model/architecture. Here we explain four transfer learning models briefly, that we have used for our experimentation.
@@ -54,12 +59,6 @@
  * Robust language modeling
  * **Architecture:** Stacked transformer (similar to GPT with minimal changes)
  * Used webscraping for more generalized dataset.
- 
- ### Automatic Short Answer Grading (ASAG) dataset
- --------------------------------------------------------------------------------
-  ASAG is the summative assessment of student answers by giving grades/score given a question and a reference answer. One of the most significant public dataset for this task is [Mohler dataset](https://www.aclweb.org/anthology/P11-1076.pdf).The dataset is provided by [Rada Mihalcea](https://web.eecs.umich.edu/~mihalcea/downloads.html) or you can download by pressing [here](http://web.eecs.umich.edu/~mihalcea/downloads/ShortAnswerGrading_v2.0.zip). It is a computer science domain dataset. It consists of 2273 answers with 80 questions collected from 31 students of University of North Texas. The scores are graded from 0(not correct) to 5(totally correct). The grades are allocated by two evaluators. We consider their average as the gold standard score. The mean and median of the assigned gold standard scores are 4.17 and 4.50 respectively. This explains the dataset biasity towards correct answer, which may affect on the regression. This biasity is clearly depicted in the following figure
-  
-![Mohler score biasity for correct answer](images/mohler_score_histogram.png)
  
  ## Experimentation
  --------------------------------------------------------------------------------

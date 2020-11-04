@@ -148,3 +148,14 @@
  [2] Mohler, M., Bunescu, R., and Mihalcea, R. (2011). Learning to grade short answer questions using semantic similarity measures and dependency graph alignments. In Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies-Volume 1, pages 752–762. Association for Computational Linguistics.
  
  [3] Sultan, M. A., Salazar, C., and Sumner, T. (2016). Fast and easy short answer grading with high accuracy. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 1070–1075.
+ 
+ ## Citation
+
+```bibtex
+@article{gaddipati2020comparative,
+  title={Comparative Evaluation of Pretrained Transfer Learning Models on Automatic Short Answer Grading},
+  author={Gaddipati, Sasi Kiran and Nair, Deebul and Pl{\"o}ger, Paul G},
+  journal={arXiv preprint arXiv:2009.01303},
+  year={2020}
+}
+```

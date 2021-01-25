@@ -2,16 +2,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-ANSWERS_PATH = 'dataset\Mohler_dataset_tim\cleaned\mohler_answers.csv'
+fig = plt.figure()
+ax = fig.add_subplot(111)
+
+ANSWERS_PATH = 'dataset\mohler_dataset_edited.csv'
 answers_data = pd.read_csv(ANSWERS_PATH)
 
-score_avg = answers_data['score_avg'].to_list()
-scores_allotted = answers_data['score_avg'].unique()
-scores_allotted = np.sort(scores_allotted)
+count = answers_data['score_avg'].value_counts(sort=False)
+hist = answers_data['score_avg'].hist(grid=False)
 
-count = []
-for score in scores_allotted:
-    count.append(score_avg.count(score))
+ax.set_xticks(np.arange(0, 5.5, 0.5))
+ax.grid(linestyle='--')
 
-plt.plot(scores_allotted, count)
+plt.ylabel('count', fontsize=12, weight='bold')
+plt.xlabel('assigned grade', fontsize=12, weight='bold')
+
 plt.show()
